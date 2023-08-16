@@ -1,11 +1,11 @@
+#include common_scripts\utility;
 #include maps\mp\_utility;
 #include maps\mp\zm_buried_sq;
-#include maps\mp\zombies\_zm_sidequests;
-#include common_scripts\utility;
-#include maps\mp\zombies\_zm_utility;
-#include maps\mp\zm_buried_sq_tpo;
-#include maps\mp\zm_buried_sq_ows;
 #include maps\mp\zm_buried_sq_ip;
+#include maps\mp\zm_buried_sq_ows;
+#include maps\mp\zm_buried_sq_tpo;
+#include maps\mp\zombies\_zm_sidequests;
+#include maps\mp\zombies\_zm_utility;
 
 // This Script was created By StickGaming
 // Some code in the script have been used or remixed from other people around the internet
@@ -147,12 +147,12 @@ new_sq_ml_puzzle_logic()
 				m_lever playsound( "zmb_sq_maze_correct_spark" );
 				// this step is really hard to do when you don't have 4 people watching all 4 switches at the same time
 				// with 3 or less players tell the player if a switch is in the correct order but don't tell what color
-				if( players.size <= 3 && lever_flipped_in_position <= 4 - players.size )
+				if( players.size <= 3 )
 					AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": ^3Spark" );
 			}
 			// this step is really hard to do when you don't have 4 people watching all 4 switches at the same time
 			// with 3 or less players tell the player if a switch is in the correct order but don't tell what color
-			else if( players.size <= 3 && lever_flipped_in_position <= 4 - players.size )
+			else if( players.size <= 3 )
 				AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": No Spark" );
 		}
 		if ( n_correct == a_levers.size )
