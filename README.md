@@ -1,4 +1,4 @@
-# Stick Gaming Pluto Buried Easter Egg Quality of Life improvement
+# Stick Gaming Pluto Buried Richtofen Easter Egg Quality of Life improvement
 This script makes the Easter Egg achievable with any amount of players in the game session while keeping the original design of each step the same but allowing any player to complete it.
 
 
