@@ -81,7 +81,7 @@ new_ows_target_delete_timer()
 	self endon( "death" );
 	wait 4; // change this if you want the target to stay alive longer (3arc had this set to 4)
 	self notify( "ows_target_timeout" );
-	level.targets_allowed_to_be_missed--; // amount of targets allowed to be missed based goes down
+	level.targets_allowed_to_be_missed--; // amount of targets allowed to be missed goes down
 	if ( level.targets_allowed_to_be_missed < 0 /*|| ( getPlayers().size == 3 && level.targets_allowed_to_be_missed > 4 && level.targets_allowed_to_be_missed < 23 )*/ ) //the purpose of the commented conditions is to make the step on 3p be optional between 3 locations and all locations.
 		flag_set( "sq_ows_target_missed" );
 	/*else if ( getPlayers().size == 3 && level.targets_allowed_to_be_missed >= 0 && level.targets_allowed_to_be_missed <= 4 ) //clears the flag in the case that the players choose to only shoot the targets from 3 locations instead of all.
