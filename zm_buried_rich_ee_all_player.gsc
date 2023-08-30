@@ -79,7 +79,7 @@ _are_all_players_in_time_bomb_volume_qol( e_volume )
 new_ows_target_delete_timer()
 {
 	self endon( "death" );
-	wait 4; // change this if you want the target to stay alive longer (3arc had this set to 4)
+	wait 4;
 	self notify( "ows_target_timeout" );
 	level.targets_allowed_to_be_missed--; // amount of targets allowed to be missed goes down
 	if ( level.targets_allowed_to_be_missed < 0 /*|| ( getPlayers().size == 3 && level.targets_allowed_to_be_missed > 4 && level.targets_allowed_to_be_missed < 23 )*/ ) //the purpose of the commented conditions is to make the step on 3p be optional between 3 locations and all locations.
@@ -147,13 +147,11 @@ new_sq_ml_puzzle_logic()
 				m_lever playsound( "zmb_sq_maze_correct_spark" );
 				// this step is really hard to do when you don't have 4 people watching all 4 switches at the same time
 				// with 3 or less players tell the player if a switch is in the correct order but don't tell what color
-				if( players.size <= 3 )
-					AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": ^3Spark" );
+				AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": ^3Spark" );
 			}
 			// this step is really hard to do when you don't have 4 people watching all 4 switches at the same time
 			// with 3 or less players tell the player if a switch is in the correct order but don't tell what color
-			else if( players.size <= 3 )
-				AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": No Spark" );
+			AllClientsPrint( "Lever flipped in position " + lever_flipped_in_position + ": No Spark" );
 		}
 		if ( n_correct == a_levers.size )
 			flag_set( "sq_ip_puzzle_complete" );
